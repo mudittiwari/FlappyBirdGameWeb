@@ -28,7 +28,7 @@ jobs:
           echo "Successfully installed pygbag"
 
           echo "Listing directory contents"
-          ls -R $GITHUB_WORKSPACE/flappybirdgame-master
+          ls -R /flappybirdgame-master
 
           echo "Attempting to build the game"
           python -m pygbag --build $GITHUB_WORKSPACE/flappybirdgame-master/main.py
