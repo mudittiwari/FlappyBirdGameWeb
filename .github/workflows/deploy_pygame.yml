@@ -22,20 +22,16 @@ jobs:
       - name: Install dependencies and build
         run: |
           echo "Attempting to install pygbag"
-          
-          # Create a virtual environment
           python -m venv venv
           source venv/bin/activate
-          
-          # Install pygbag in the virtual environment
           python -m pip install pygbag
           echo "Successfully installed pygbag"
 
+          echo "Listing directory contents"
+          ls -R $GITHUB_WORKSPACE/flappybirdgame-master
+
           echo "Attempting to build the game"
-          
-          # Build the game using pygbag
           python -m pygbag --build $GITHUB_WORKSPACE/flappybirdgame-master/main.py
-          
           echo "Successfully built the game and compiled to WebAssembly"
 
       - name: Upload to GitHub Pages branch gh-pages
