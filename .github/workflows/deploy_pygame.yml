@@ -1,4 +1,4 @@
-name: Build Flappy Bird Game with Pygbag
+name: Build Snake Game with Pygbag
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-pygbag:
-    name: Build and Deploy Flappy Bird Game
+    name: Build and Deploy Snake Game
     runs-on: ubuntu-latest
 
     steps:
@@ -22,20 +22,24 @@ jobs:
       - name: Install dependencies and build
         run: |
           echo "Attempting to install pygbag"
+          
+          # Create a virtual environment
           python -m venv venv
           source venv/bin/activate
+          
+          # Install pygbag in the virtual environment
           python -m pip install pygbag
           echo "Successfully installed pygbag"
 
-          echo "Listing directory contents"
-          ls -R /flappybirdgame-master
-
           echo "Attempting to build the game"
-          python -m pygbag --build $GITHUB_WORKSPACE/flappybirdgame-master/main.py
+          
+          # Build the game using pygbag
+          python -m pygbag --build $GITHUB_WORKSPACE/flapppybirdgame-master/main.py
+          
           echo "Successfully built the game and compiled to WebAssembly"
 
       - name: Upload to GitHub Pages branch gh-pages
         uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
           branch: gh-pages
-          folder: flappybirdgame-master/build/web
+          folder: flapppybirdgame-master/build/web
