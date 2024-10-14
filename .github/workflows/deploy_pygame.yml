@@ -1,4 +1,4 @@
-name: Build Snake Game with Pygbag
+name: Build Flappy Bird Game with Pygbag
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-pygbag:
-    name: Build and Deploy Snake Game
+    name: Build and Deploy Flappy Bird Game
     runs-on: ubuntu-latest
 
     steps:
