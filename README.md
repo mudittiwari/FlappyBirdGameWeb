@@ -12,7 +12,7 @@ Welcome to **Flappy Bird**, a fun and addictive arcade game where you control a 
 Control the bird and avoid hitting the pipes. Score points by successfully passing through the gaps between pipes.
 
 ### Controls:
-- **Mouse Click / Space Bar**: Tap to make the bird fly upward.
+- **Mouse Click**: Tap to make the bird fly upward.
 
 ### Gameplay:
 1. **Start Screen**: The game begins with a start screen. Double-tap (mouse) to start the game.
